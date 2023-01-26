@@ -22,13 +22,14 @@ public class Times_Table extends HttpServlet {
         //dan의 값을 입력해줘야만 원하는 출력 결과를 볼 수 있다.
         //입력하지 않으면 오류 발생함
         int i = 1;
-
-
-        resp.getWriter().append("<h1>%d단</h1>".formatted(dan));
+        String rs = "<h1>%d단</h1>".formatted(dan);
+        resp.getWriter().append(rs);
 
         for (i = 1; i < 10; i++){
             resp.getWriter().append("<div>%d * %d = %d</div>".formatted(dan, i, dan * i));
         }
     }
 }
+//Servlet => html 생성기
+
 
