@@ -15,7 +15,20 @@ public class Times_Table extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html; charset-utf-8");
 
-        resp.getWriter().append("구구단 테스트");
+        int dan = Integer.parseInt(req.getParameter("dan"));
+        //times?dan=정수 값
+        //원하는 정수 값을 입력하면
+        //해당 정수의 구구단을 보여준다.
+        //dan의 값을 입력해줘야만 원하는 출력 결과를 볼 수 있다.
+        //입력하지 않으면 오류 발생함
+        int i = 1;
 
+
+        resp.getWriter().append("<h1>%d단</h1>".formatted(dan));
+
+        for (i = 1; i < 10; i++){
+            resp.getWriter().append("<div>%d * %d = %d</div>".formatted(dan, i, dan * i));
+        }
     }
 }
+
