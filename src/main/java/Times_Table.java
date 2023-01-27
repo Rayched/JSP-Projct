@@ -16,7 +16,7 @@ public class Times_Table extends HttpServlet {
         int dan = Rq.getIntParam("dan",0);
         int limit = Rq.getIntParam("limit",0);
 
-        Rq.appendBody("<div class=\"a\"></div>\n".formatted(dan));
+        Rq.appendBody("<div class=\"a\">%d</div>\n".formatted(dan));
         for(int i = 1; i <= limit; i++){
             resp.getWriter().append("<div>%d * %d = %d</div>".formatted(dan, i, dan * i));
         }
@@ -24,6 +24,8 @@ public class Times_Table extends HttpServlet {
 }
 //Servlet => html 생성기
 //request와 responce를 일일히 수동으로 하는 것은 번거롭다.
-//자주 사용하는 기능을
+//자주 사용하는 기능을 따로 모아둘 rq 객체를 만든다.
+
+//구구단 logic 명령어 예시 => "/times?dan=5&limit=8"
 
 
